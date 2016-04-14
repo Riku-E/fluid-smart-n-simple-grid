@@ -1,0 +1,14 @@
+// Grid confs
+$grid-prefix: col !default;
+
+$grid-spacing:1%;
+$gird-max-width: 1240px;
+
+$gird-break-to-eight: 40em;
+$gird-break-to-twelve: 60em;
+
+$grid-col-count-plus-breakpoints: (
+    4:  '(max-width: #{$gird-break-to-eight})', 
+    8:  '(min-width: #{$gird-break-to-eight}) and (max-width: #{$gird-break-to-twelve})',
+    12: '(min-width: #{$gird-break-to-twelve})'
+)

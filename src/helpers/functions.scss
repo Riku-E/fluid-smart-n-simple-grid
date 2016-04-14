@@ -1,0 +1,11 @@
+// Math functions <3.
+// Calculate width of element based on the configurations
+@function calculate-width ($col-size, $col-count) {
+    
+    $howManyNeededToFill: ($col-count / $col-size);
+
+    $howManyGutters: $col-count - $col-size;
+
+    @return (98% / $howManyNeededToFill) - ($grid-spacing * 2 * $howManyGutters / $col-count);
+
+}

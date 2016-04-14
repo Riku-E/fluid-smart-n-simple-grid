@@ -1,0 +1,94 @@
+@import "../helpers/grid-configurations.scss";
+
+// Row container
+.row-full {
+
+  @extend %row;
+
+}
+
+.row {
+
+	@extend %row;
+	max-width: $gird-max-width;
+
+}
+
+
+// col-1-12, col-2-4 etc common styles
+[class^="col-"] {
+
+	/* DEMO STYLES */
+	border: 1px solid gray;
+	padding: 1em;
+	/* DEMO STYLES */
+
+	float: left;
+
+	// Default to "100%" if missing col info for breakpoint
+	width: 98%;
+
+	// GUTTER
+	margin: $grid-spacing;
+
+	&.no-gutter {
+		margin: $grid-spacing 0;
+	}
+
+	&.no-gutter--right {
+		margin: $grid-spacing 0 $grid-spacing $grid-spacing;
+	}
+
+	&.no-gutter--left {
+		margin: $grid-spacing $grid-spacing $grid-spacing 0;
+	}	
+
+
+}
+
+
+
+@mixin grid-loop($grid-col-count) {
+
+	@for $i from 1 through $grid-col-count {
+
+		.#{$grid-prefix}-#{$i}-#{$grid-col-count} { 
+
+			width: calculate-width($i, $grid-col-count);
+			
+			&.no-gutter {
+
+				width: calculate-width($i, $grid-col-count) + $grid-spacing*2;
+				
+
+			}
+
+			&.no-gutter--left, &.no-gutter--right {
+
+				width: calculate-width($i, $grid-col-count) + $grid-spacing;
+				
+			}
+
+		} // CLOSE GRID-CLAS 
+
+	} // CLOSE FOR LOOP
+
+}
+
+@each $grid-col-count, $breakPoint in $grid-col-count-plus-breakpoints {
+
+	@if ( $breakPoint ) {
+		
+		@media screen and #{$breakPoint} {
+
+			@include grid-loop($grid-col-count);
+
+		} // CLOSE MEDIA QUERY
+
+	} @else {
+
+		@include grid-loop($grid-col-count);
+
+	} // CLOSE IF BREAKPOINT
+
+} // CLOSE EACH

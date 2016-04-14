@@ -1,0 +1,13 @@
+%clearfix:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+%row {
+
+    @extend %clearfix;
+    margin: auto;
+    width: 100%;
+
+}
