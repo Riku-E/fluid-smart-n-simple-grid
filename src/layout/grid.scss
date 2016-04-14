@@ -10,10 +10,9 @@
 .row {
 
 	@extend %row;
-	max-width: $gird-max-width;
+	max-width: $grid-max-width;
 
 }
-
 
 // col-1-12, col-2-4 etc common styles
 [class^="col-"] {
@@ -69,7 +68,7 @@
 				
 			}
 
-		} // CLOSE GRID-CLAS 
+		} // CLOSE GRID-CLASS
 
 	} // CLOSE FOR LOOP
 
@@ -84,10 +83,6 @@
 			@include grid-loop($grid-col-count);
 
 		} // CLOSE MEDIA QUERY
-
-	} @else {
-
-		@include grid-loop($grid-col-count);
 
 	} // CLOSE IF BREAKPOINT
 
