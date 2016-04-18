@@ -1,5 +1,5 @@
 // Grid confs
-$grid-prefix: col !default;
+$grid-prefix: col;
 
 $grid-spacing:1%;
 $grid-max-width: 1240px;
@@ -8,7 +8,7 @@ $grid-break-to-eight: 40em;
 $grid-break-to-twelve: 60em;
 
 $grid-col-count-plus-breakpoints: (
-    4:  '(max-width: #{$grid-break-to-eight})', 
-    8:  '(min-width: #{$grid-break-to-eight}) and (max-width: #{$grid-break-to-twelve})',
+    4:  '(max-width: #{$grid-break-to-eight - 0.001em})', 
+    8:  '(min-width: #{$grid-break-to-eight}) and (max-width: #{$grid-break-to-twelve - 0.001em})',
     12: '(min-width: #{$grid-break-to-twelve})'
 )

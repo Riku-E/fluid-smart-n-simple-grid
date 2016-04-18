@@ -30,7 +30,7 @@
   [class^="col-"].no-gutter--left {
     margin: 1% 1% 1% 0; }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 39.999em) {
   .col-1-4 {
     width: 23%; }
     .col-1-4.no-gutter {
@@ -58,7 +58,7 @@
       width: 100%; }
     .col-4-4.no-gutter--left, .col-4-4.no-gutter--right {
       width: 99%; } }
-@media screen and (min-width: 40em) and (max-width: 60em) {
+@media screen and (min-width: 40em) and (max-width: 59.999em) {
   .col-1-8 {
     width: 10.5%; }
     .col-1-8.no-gutter {
