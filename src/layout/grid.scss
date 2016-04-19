@@ -15,7 +15,7 @@
 }
 
 // col-1-12, col-2-4 etc common styles
-[class^="col-"] {
+[class^="#{$grid-prefix}-"], [class*=' #{$grid-prefix}-'] {
 
 	/* DEMO STYLES */
 	border: 1px solid gray;
@@ -59,7 +59,6 @@
 
 				width: calculate-width($i, $grid-col-count) + $grid-spacing*2;
 				
-
 			}
 
 			&.no-gutter--left, &.no-gutter--right {
